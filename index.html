@@ -1,136 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Saif-Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- Font Awesome -->
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- Bootstrap 5.0 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body>
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <!-- ================= Header Section Start ==================== -->
-    <div class="header-section ">
+    <div class="header-section">
+      <nav class="navbar navbar-expand-lg navbar-light text-white fixed-top">
+        <div class="container-fluid nav-body" style="width: 85%">
+          <!-- Brand and toggler -->
+          <a class="navbar-brand text-white fs-2 fw-bold" href="#">Portfolio</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <nav class="navbar navbar-expand-lg navbar-light text-white">
-            <div class="container-fluid nav-body" style="width: 85%;">
-                <!-- Brand and toggler -->
-                <a class="navbar-brand text-white fs-2 fw-bold" href="#">Portfolio</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+          <!-- Navbar items and search -->
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarSupportedContent"
+          >
+            <!-- Nav items aligned right -->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-white fs-4">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-white"
+                  aria-current="page"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-white"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Services
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
 
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Contact</a>
+              </li>
+            </ul>
 
-        
-                <!-- Navbar items and search -->
-                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-                    <!-- Nav items aligned right -->
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-white fs-4">
-                        <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">About</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Services
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Contact</a>
-                        </li>
+            <li class="d-flex nav-item me-2">
+              <a href="#" class="btn resume-btn fw-semibold" target="_blank"
+                >Resume</a
+              >
+            </li>
 
-                    </ul>
-
-                    <li class="d-flex nav-item me-2">
-                        <a href="#" class="btn resume-btn fw-semibold" target="_blank">Resume</a>
-                    </li>
-                    
-        
-
-                   
-
-
-                    <!-- Search form -->
-                    <!-- <form class="d-flex">
+            <!-- Search form -->
+            <!-- <form class="d-flex">
                         <input class="form-control ms-2 me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn search-btn" type="submit">Search</button>
                     </form> -->
-                    
-                </div>
-            </div>
-            </div>
-        </nav>
-        
+          </div>
+        </div>
+      </nav>
     </div>
     <!-- ================= Header Section End ==================== -->
 
-
     <!-- ================= Hero Section Start ==================== -->
     <div class="hero-section">
+      <div class="container-fluid hero-body" style="width: 85%">
+        <div class="row align-items-center py-5">
+          <div class="col-md-12 col-lg-6 col-sm-12">
+            <div class="hero-content py-5">
+              <h3 class="mb-2">Salamun A'laik! This is</h3>
+              <h1 class="mb-2 fw-bold">MD Saiful Islam</h1>
+              <h3 class="mb-4">
+                I am a <span class="text"> Full Stack Web Developer</span>
+              </h3>
 
+              <p class="mb-4">
+                I am Specialized in PHP, MySQL & Laravel with Proficient in
+                creating responsive and dynamic web applications based on user
+                needs using a combination of technologies including JavaScript
+                and Bootstrap.
+              </p>
+
+              <!-- Social Icons -->
+              <div class="home-social">
+                <a href="#" style="--i: 7"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" style="--i: 8"><i class="fa-brands fa-whatsapp"></i></a>
+                <!-- <a href="#" style="--i: 9"><i class="fa-brands fa-github"></i></a> -->
+                <a href="#" style="--i: 10"><i class="fa-regular fa-envelope"></i></a>
+                <a href="#" style="--i: 11"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+
+
+              <a href="#" class="btn resume-btn" style="font-size: 20px; height: 45px;">View Resume <i class="fa-solid fa-eye"></i></a>
+              <a href="#" class="btn resume-btn" style="font-size: 20px; height: 45px;">GitHub <i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-lg-6 col-sm-12 order-first order-lg-last">
+            <div class="hero-image img-fluid py-5">
+              <img src="assets/images/saif-git.jpg" alt="Profile Image" class="rounded-image"/>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- ================= Hero Section End ==================== -->
 
 
+
+
+
     <!-- ================= About Section Start ==================== -->
     <div class="about-section">
+      <div class="container-fluid" id="about-body">
+        <div class="row py-5">
 
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <h1 class="text-center">About Me</h1>
+          </div>
+
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="about-right">
+              <!-- Toggle Buttons -->
+              <div class="toggle-container">
+                <button class="toggle-button active" onclick="showContent('about')">About</button>
+                <button class="toggle-button" onclick="showContent('skills')">Skills</button>
+                <button class="toggle-button" onclick="showContent('certification')">Certification</button>
+                <button class="toggle-button" onclick="showContent('education')">Education</button>
+              </div>
+            
+              <!-- Content Sections -->
+              <div class="content-section" id="about">
+            
+                <!-- About Me Content -->
+                <h2>About Me</h2>
+                <p>I am <strong> Saiful Islam </strong> Passionate about programming.
+                  <br>Since childhood, I had a strong interest in technology-related topics. But, due to a lack of resources and
+                  guidelines, couldn't learn much at that time. Later, while studying in a madrasa, I started collecting various
+                  resources on my own and gradually developed a passion for programming. By coincidence, I got the opportunity to
+                  pursue a Diploma in Computer Engineering, where I learned about web and software-related subjects. During my
+                  studies, I took professional training and acquired skills in Front-End and Back-End development with essential
+                  technologies. Now, I am eager to start a career in web application development, combining my skills to build
+                  responsive and dynamic solutions.
+                </p>
+              </div>
+            
+              <div class="content-section hidden" id="skills">
+                <h2>Skills</h2>
+                <div class="skills-container">
+                  <!-- Front-End Column -->
+                  <div class="skills-column">
+                    <h3>Front-End</h3>
+                    <ul>
+                      <li> <i class="fa-brands fa-html5"></i></i> HTML5</li>
+                      <li> <i class="fa-brands fa-css3"></i> CSS3</li>
+                      <li> <i class="fa-brands fa-js"></i> JavaScript</li>
+                      <li> <i class="fa-brands fa-bootstrap"></i> Bootstrap</li>
+                    </ul>
+                  </div>
+                  <!-- Back-End Column -->
+                  <div class="skills-column">
+                    <h3>Back-End</h3>
+                    <ul>
+                      <li> <i class="fa-brands fa-php"></i> PHP</li>
+                      <li> <i class="fa-solid fa-database"></i> MySQL</li>
+                      <li> <i class="fa-brands fa-laravel"></i> Laravel</li>
+            
+                    </ul>
+                  </div>
+                  <!-- Tools Column -->
+                  <div class="skills-column">
+                    <h3>Tools</h3>
+                    <ul>
+                      <li> <i class='bx bxl-visual-studio'></i> VS Code</li>
+                      <li> <i class="fa-brands fa-git-alt"></i> Git </li>
+                      <li> <i class="fa-brands fa-github"></i> GitHub </li>
+                      <li> <i class="fa-solid fa-microscope"></i> Postman</li>
+                      <li> <i class='bx bxl-adobe'></i> Photoshop</li>
+                      <li> <i class='bx bxl-adobe'></i> Illustrator</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="content-section hidden" id="certification">
+                <h1>Certification</h1> <br><br>
+            
+                <h3 style="color: cyan;">OSTAD</h3>
+                <p style="color: rgb(129, 143, 144);"> Mar 2024 - Sep 2024 (6 Months)</p>
+                <p>Web Development with PHP & Laravel</p> <br>
+            
+                <h3 style="color: cyan;">DIPTI</h3>
+                <p style="color: rgb(129, 143, 144);"> Mar 2023 - Mar 2024 (1 Year)</p>
+                <p>Diploma in Web & E-Commerce</p> <br>
+            
+                <h3 style="color: cyan;">DIPTI</h3>
+                <p style="color: rgb(129, 143, 144);"> One-day Workshop</p>
+                <p>Critical Thinking</p> <br>
+            
+            
+              </div>
+            
+              <div class="content-section hidden" id="education">
+                <h1>Education</h1> <br><br>
+            
+                <p style="color: rgb(129, 143, 144);"> 2024</p>
+                <p> An-Noor Islamia Madrasah </p>
+                <h3 style="color: cyan;"> Takmil (Master's) </h3>
+                <pre>Result:      Jayyid Jiddan</pre>
+            
+                <br>
+            
+                <p style="color: rgb(129, 143, 144);"> 2019 - 2024 (4 Years)</p>
+                <p>Institute of Science and Technology (IST) </p>
+                <h3 style="color: cyan;"> Diploma in Computer Engineering </h3>
+                <pre>Result:      CGPA: 3.64 / 4.00</pre>
+            
+                <br>
+            
+                <p style="color: rgb(129, 143, 144);"> 2019</p>
+                <p> Gadairchar Achia Islamia Alim Madrasah </p>
+                <h3 style="color: cyan;"> Dakhil (Secondery School Certificate) </h3>
+                <pre>Result:      GPA: 4.25 / 5.00</pre>
+            
+                <br>
+            
+            
+            
+                </div>
+            </div>
+
+        </div>
+      </div>
     </div>
     <!-- ================= About Section End ==================== -->
 
-
     <!-- ================= Project Section Start ==================== -->
-    <div class="project-section">
-
-    </div>
+    <div class="project-section"></div>
     <!-- ================= Project Section End ==================== -->
 
-
     <!-- ================= Blog Section Start ==================== -->
-    <div class="blog-section">
-
-    </div>
+    <div class="blog-section"></div>
     <!-- ================= Blog Section End ==================== -->
 
-
     <!-- ================= Contact Section Start ==================== -->
-    <div class="contact-section">
-
-    </div>
+    <div class="contact-section"></div>
     <!-- ================= Contact Section End ==================== -->
 
-
     <!-- ================= Footer Section Start ==================== -->
-    <div class="footer-section">
-
-    </div>
+    <div class="footer-section"></div>
     <!-- ================= Footer Section End ==================== -->
 
-
-
     <!-- Bootstrap Script 5.0 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- custom js -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

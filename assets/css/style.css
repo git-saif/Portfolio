@@ -44,7 +44,7 @@
 .resume-btn{
     background-color: rgb(0, 238, 255) !important;
     height: 38px;
-    font-size: 30px;
+    font-weight: 400 !important;
     display: flex;
     color: black !important;
 }
@@ -66,3 +66,272 @@
     background-color: rgb(0, 238, 255);
     color: black !important;
 }
+/* End Header */
+
+
+
+
+/* ================= Start Home Section ================= */
+.hero-section{
+    background-color: #081b29;
+    /* min-height: 100vh; */
+    color: white;
+}
+
+.hero-section .row{
+    min-height: 100vh;
+}
+
+.hero-content h1{
+    font-weight: 400;
+    font-size: 65px;
+    font-weight: 600;
+}
+
+.hero-content h3{
+    font-weight: 400;
+    font-size: 35px;
+    font-weight: 500;
+    padding-top: 20px;
+}
+
+.hero-content h3 span{
+    color: rgb(0, 238, 255);
+    font-weight: 400;
+    font-size: 30px;    
+}
+
+.hero-content p{
+    font-weight: 400;
+    font-size: 25px;
+}
+
+
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-body{
+    width: 85%;
+    /* margin: auto; */
+  }
+  
+  /* outer border with gap inside */
+  .image-border {
+    padding: 10px; 
+    background-color: rgb(0, 238, 255);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .rounded-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    padding: 8px;
+  }
+  
+  .rounded-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 0 0 0 7px rgb(0, 238, 255);
+  }
+
+/* social icons */
+.home-social {
+    display: flex;
+    margin: 20px 0;
+}
+
+.home-social a {
+    display: flex;
+    font-size: 20px;
+    margin: 0 10px;
+    color: #0ef;
+    transition: 0.5s ease;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    text-decoration: none;
+    box-shadow: 0 0 0 2px #0ef;
+}
+
+.home-social a:hover {
+    background: #0ef;
+    color: #1f242d;
+    box-shadow: 0 0 5px #0ef, 0 0 2px #0ef, 0 0 8px #0ef;
+}
+/* ================= End Home Section ================= */
+  
+
+/* ================= Start About Section ================= */
+
+.about-section{
+    background-color: #0e283a;
+    min-height: 100vh;
+    color: white;
+}
+
+#about-body{
+    width: 85%;
+    /* margin: auto; */
+}
+
+
+
+/* Right Side (About Text Div) */
+.about-right {
+    /* padding: 50px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Toggle Button Container */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    overflow: hidden;
+    width: fit-content;
+}
+
+/* Toggle Buttons */
+.toggle-button {
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    color: #e4d8d8;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    outline: none;
+    position: relative;
+}
+
+.toggle-button.active {
+    background: cyan;
+    color: #142227;
+    border-radius: 30px;
+}
+
+.toggle-button.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    z-index: -1;
+}
+
+/* About Content Sections */
+.content-section {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.content-section:not(.hidden) {
+    display: block;
+}
+
+.content-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.content-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+/* End About Section */
+
+
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skills-column {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    color: white;
+}
+
+.skills-column h3 {
+    font-size: 20px;
+    color: cyan;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.skills-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-column ul li {
+    font-size: 16px;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.skills-column ul li:hover {
+    color: #8e2de2;
+    font-weight: bold;
+}
+
+/* Front-End */
+.fa-html5 { color: #E34F26; } /* HTML */
+.fa-css3 { color: #1572B6; } /* CSS */
+.fa-js { color: #F7DF1E; } /* JavaScript */
+.fa-bootstrap { color: #7952B3; } /* Bootstrap */
+
+/* Back-End */
+.fa-php { color: #777BB4; } /* PHP */
+.fa-database { color: #4479A1; } /* MySQL */
+.fa-laravel { color: #FF2D20; } /* Laravel */
+.skills-column:nth-child(2) ul li:nth-child(6) i { color: #47A248; } /* MongoDB */
+
+/* Tools */
+.bxl-visual-studio { color: #007ACC; } /* VS Code */
+.fa-git-alt { color: #FF6C37; } /* Git */
+.fa-github { color: #fff; } /* GitHub */
+.fa-microscope { color: #FF6C37; } /* Postman */
+.bxl-adobe { color: #31A8FF; } /* Photoshop */
+.bxl-adobe { color: #FF9A00; } /* Illustrator */
+
+/* Illustrator */
+
+/* End Skill Section */
+
+/* End Skill Section */
+  
