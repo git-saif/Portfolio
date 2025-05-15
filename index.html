@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Saif-Portfolio</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/projects.css" />
 
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -163,38 +164,52 @@
       <div class="container-fluid" id="about-body">
         <div class="row py-5">
 
-          <div class="col-sm-12 col-md-12 col-lg-6">
-            <h1 class="text-center">About Me</h1>
+          <div class="heading pb-5">
+            <h1 class="text-center ">Meet Saif</h1>
+            <div class="uderline"></div>
+          </div>
+
+          <div class="col-sm-12 col-md-12 col-lg-6 about-content">
+            <h1 class="">About Me</h1>
+            <!-- <h1>About Me</h1> -->
+            <p>I am <strong> Saiful Islam </strong> an Enthusiastic Full Stack Web Developer with Laravel internship experience at Smart Software Ltd. Proficient in various
+            web technologies. Completed a Diploma in Computer Engineering with a CGPA of 3.64. Earned certifications from DIPTI and
+            OSTAD, along with industrial training. I have built industry-standard projects that strengthened my skills and boosted
+            my confidence to work in the software industry.
+            </p>
+            <h1>Career Objective</h1>
+            <p>To excel as a Technologist & Full Stack Web Developer by
+            leveraging my strong programming skills and knowledge of various
+            web technologies. I am highly interested about programming skills,
+            especially in back-end Technology. My goal is to contribute
+            effectively to the technology sector and continuously enhance my    expertise</p>
           </div>
 
           <div class="col-sm-12 col-md-12 col-lg-6">
             <div class="about-right">
               <!-- Toggle Buttons -->
               <div class="toggle-container">
-                <button class="toggle-button active" onclick="showContent('about')">About</button>
+                <button class="toggle-button active" onclick="showContent('experience')">Experience</button>
                 <button class="toggle-button" onclick="showContent('skills')">Skills</button>
                 <button class="toggle-button" onclick="showContent('certification')">Certification</button>
                 <button class="toggle-button" onclick="showContent('education')">Education</button>
               </div>
             
               <!-- Content Sections -->
-              <div class="content-section" id="about">
+              <div class="content-section" id="experience">
             
                 <!-- About Me Content -->
-                <h2>About Me</h2>
-                <p>I am <strong> Saiful Islam </strong> Passionate about programming.
-                  <br>Since childhood, I had a strong interest in technology-related topics. But, due to a lack of resources and
-                  guidelines, couldn't learn much at that time. Later, while studying in a madrasa, I started collecting various
-                  resources on my own and gradually developed a passion for programming. By coincidence, I got the opportunity to
-                  pursue a Diploma in Computer Engineering, where I learned about web and software-related subjects. During my
-                  studies, I took professional training and acquired skills in Front-End and Back-End development with essential
-                  technologies. Now, I am eager to start a career in web application development, combining my skills to build
-                  responsive and dynamic solutions.
-                </p>
+                <h1>Industrial Experience</h1> <br>
+                <h3 style="color: cyan;"> Smart Software Ltd. <span style="color: rgb(129, 143, 144); font-size: 20px;"> (3
+                    Months)</span></h3>
+                <h4> Full Stack Web Developer </h4> 
+                <p>I have completed a 3-month Laravel Developer internship at Smart
+                Software LTD, where I worked on industry-standard projects and
+                strengthened my real-world development skills.</p>
               </div>
             
               <div class="content-section hidden" id="skills">
-                <h2>Skills</h2>
+                <h1>Skills</h1>
                 <div class="skills-container">
                   <!-- Front-End Column -->
                   <div class="skills-column">
@@ -232,44 +247,45 @@
               </div>
             
               <div class="content-section hidden" id="certification">
-                <h1>Certification</h1> <br><br>
+                <h1>Certification</h1> <br>
             
-                <h3 style="color: cyan;">OSTAD</h3>
-                <p style="color: rgb(129, 143, 144);"> Mar 2024 - Sep 2024 (6 Months)</p>
-                <p>Web Development with PHP & Laravel</p> <br>
             
-                <h3 style="color: cyan;">DIPTI</h3>
-                <p style="color: rgb(129, 143, 144);"> Mar 2023 - Mar 2024 (1 Year)</p>
-                <p>Diploma in Web & E-Commerce</p> <br>
+                <h3 style="color: cyan;"> Web Application Development <span style="color: rgb(129, 143, 144); font-size: 20px;"> (3 Months Industrial Training)</span></h3>
+                <h4>Daffodil International Professional Training Institute </h4> <br>
+                
+                <h3 style="color: cyan; "> Web Development with PHP & Laravel  <span style="color: rgb(129, 143, 144);"> (6 Months)</span></h3>
+                <h4>OSTAD Limited</h4> <br>
             
-                <h3 style="color: cyan;">DIPTI</h3>
-                <p style="color: rgb(129, 143, 144);"> One-day Workshop</p>
-                <p>Critical Thinking</p> <br>
+                <h3 style="color: cyan;"> Diploma in Web & E-Commerce <span style="color: rgb(129, 143, 144);"> (1 Year)</span></h3>
+                <h4>Daffodil International Professional Training Institute </h4> <br>
+            
+                <h3 style="color: cyan;"> Critical Thinking <span style="color: rgb(129, 143, 144);"> (1 Day Workshop)</span></h3>
+                <h4>Daffodil International Professional Training Institute </h4> <br>
             
             
               </div>
             
               <div class="content-section hidden" id="education">
-                <h1>Education</h1> <br><br>
+                <h1>Education</h1> <br>
             
                 <p style="color: rgb(129, 143, 144);"> 2024</p>
-                <p> An-Noor Islamia Madrasah </p>
                 <h3 style="color: cyan;"> Takmil (Master's) </h3>
-                <pre>Result:      Jayyid Jiddan</pre>
+                <p> An-Noor Islamia Madrasah </p>
+                <p>Result: Jayyid Jiddan</p>
             
                 <br>
             
                 <p style="color: rgb(129, 143, 144);"> 2019 - 2024 (4 Years)</p>
                 <p>Institute of Science and Technology (IST) </p>
                 <h3 style="color: cyan;"> Diploma in Computer Engineering </h3>
-                <pre>Result:      CGPA: 3.64 / 4.00</pre>
+                <p>CGPA: 3.64 / 4.00</p>
             
                 <br>
             
                 <p style="color: rgb(129, 143, 144);"> 2019</p>
                 <p> Gadairchar Achia Islamia Alim Madrasah </p>
                 <h3 style="color: cyan;"> Dakhil (Secondery School Certificate) </h3>
-                <pre>Result:      GPA: 4.25 / 5.00</pre>
+                <p>GPA: 4.25 / 5.00</p>
             
                 <br>
             
@@ -281,20 +297,77 @@
         </div>
       </div>
     </div>
+    </div>
     <!-- ================= About Section End ==================== -->
 
+
+
     <!-- ================= Project Section Start ==================== -->
-    <div class="project-section"></div>
+    <div class="project-section container-fluid">
+      <div class="container-fluid" id="projects-body">
+        <div class="row py-5">
+
+          <div class="heading pb-3">
+            <h1 class="text-center ">Projects</h1>
+            <div class="uderline"></div>
+          </div>
+
+          <div class="row g-4 project-container">
+            <!-- Project Box 1 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="project-box text-center  shadow-sm h-100">
+                <img src="./assets/images/e-com-1.jpg" alt="Project 1" class="project-img img-fluid "
+                  style="height: 400px; object-fit: cover;">
+                <h3 class="project-title">POS App (Full Stack)</h3>
+                <a href="https://example.com/project1" class="view-btn" target="_blank">Details</a>
+                <a href="https://example.com/project1" class="view-btn" target="_blank">View Project</a>
+              </div>
+            </div>
+          
+            <!-- Project Box 2 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="project-box text-center  shadow-sm h-100">
+                <img src="./assets/images/e-com-2.jpg" alt="Project 2" class="project-img img-fluid"
+                  style="height: 400px; object-fit: cover;">
+                <h3 class="project-title">CRUD App (PHP)</h3>
+                <a href="https://example.com/project2" class="view-btn" target="_blank">Details</a>
+                <a href="https://example.com/project2" class="view-btn" target="_blank">View Project</a>
+              </div>
+            </div>
+          
+            <!-- Project Box 3 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="project-box text-center  shadow-sm h-100">
+                <img src="./assets/images/e-com-2.jpg" alt="Project 3" class="project-img img-fluid"
+                  style="height: 400px; object-fit: cover;">
+                <h3 class="project-title">CRUD App (PHP)</h3>
+                <a href="https://example.com/project2" class="view-btn" target="_blank">Details</a>
+                <a href="https://example.com/project2" class="view-btn" target="_blank">View Project</a>
+              </div>
+            </div>  </div>
+
+      </div>
+      </div>
+    </div>
     <!-- ================= Project Section End ==================== -->
+
+
+
 
     <!-- ================= Blog Section Start ==================== -->
     <div class="blog-section"></div>
     <!-- ================= Blog Section End ==================== -->
 
+
+
+
     <!-- ================= Contact Section Start ==================== -->
     <div class="contact-section"></div>
     <!-- ================= Contact Section End ==================== -->
 
+
+
+    
     <!-- ================= Footer Section Start ==================== -->
     <div class="footer-section"></div>
     <!-- ================= Footer Section End ==================== -->

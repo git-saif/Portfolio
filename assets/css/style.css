@@ -1,4 +1,9 @@
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 .navbar{
     background: rgb(17, 62, 94);
 }
@@ -188,6 +193,30 @@
     /* margin: auto; */
 }
 
+.heading{
+    /* margin:  0 !important;
+    padding: 0 !important; */
+    font-weight: 400;
+    font-size: 55px;
+    font-weight: 600;
+    color: white
+}
+
+.uderline{
+    height: 3px;
+    width: 200px;
+    background-image: linear-gradient(to right, rgb(0, 238, 255), rgb(130, 153, 158));
+    /* border-radius: 10px; */
+    margin: auto;
+}
+
+.about-content p{
+    font-size: 25px;
+    font-weight: 400;
+    text-align: justify;
+    /* padding: 5px; */
+}
+
 
 
 /* Right Side (About Text Div) */
@@ -333,5 +362,16 @@
 
 /* End Skill Section */
 
-/* End Skill Section */
+
+/* Education Section */
+
+#education p{
+    margin-bottom: 0px !important;
+}
+
+#education h1{
+    margin-bottom: 0px !important;
+}
+
+/* End Education Section */
   
