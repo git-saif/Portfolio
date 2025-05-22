@@ -1,0 +1,12 @@
+.blog-section{
+    background-color: #081b29;
+    color: white;
+    min-height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#blog-body{
+    width: 85%;
+    margin: auto;
+}
