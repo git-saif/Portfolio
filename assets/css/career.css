@@ -1,0 +1,196 @@
+/* ================= Start Career Section ================= */
+
+.career-section{
+    background-color: #0e283a;
+    min-height: 100vh;
+    color: white;
+}
+
+#career-body{
+    width: 85%;
+    /* margin: auto; */
+}
+
+.heading{
+    /* margin:  0 !important;
+    padding: 0 !important; */
+    font-weight: 400;
+    font-size: 55px;
+    font-weight: 600;
+    color: white
+}
+
+.uderline{
+    height: 3px;
+    width: 200px;
+    background-image: linear-gradient(to right, rgb(0, 238, 255), rgb(130, 153, 158));
+    /* border-radius: 10px; */
+    margin: auto;
+}
+
+.career-content p{
+    font-size: 25px;
+    font-weight: 400;
+    text-align: justify;
+    /* padding: 5px; */
+}
+
+
+
+/* Right Side (About Text Div) */
+.career-right {
+    /* padding: 50px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Toggle Button Container */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    overflow: hidden;
+    width: fit-content;
+}
+
+/* Toggle Buttons */
+.toggle-button {
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    color: #e4d8d8;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    outline: none;
+    position: relative;
+}
+
+.toggle-button.active {
+    background: cyan;
+    color: #142227;
+    border-radius: 30px;
+}
+
+.toggle-button.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    z-index: -1;
+}
+
+/* About Content Sections */
+.content-section {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.content-section:not(.hidden) {
+    display: block;
+}
+
+.content-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.content-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+/* End About Section */
+
+
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skills-column {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    color: white;
+}
+
+.skills-column h3 {
+    font-size: 20px;
+    color: cyan;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.skills-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-column ul li {
+    font-size: 16px;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.skills-column ul li:hover {
+    color: #8e2de2;
+    font-weight: bold;
+}
+
+/* Front-End */
+.fa-html5 { color: #E34F26; } /* HTML */
+.fa-css3 { color: #1572B6; } /* CSS */
+.fa-js { color: #F7DF1E; } /* JavaScript */
+.fa-bootstrap { color: #7952B3; } /* Bootstrap */
+
+/* Back-End */
+.fa-php { color: #777BB4; } /* PHP */
+.fa-database { color: #4479A1; } /* MySQL */
+.fa-laravel { color: #FF2D20; } /* Laravel */
+.skills-column:nth-child(2) ul li:nth-child(6) i { color: #47A248; } /* MongoDB */
+
+/* Tools */
+.bxl-visual-studio { color: #007ACC; } /* VS Code */
+.fa-git-alt { color: #FF6C37; } /* Git */
+.fa-github { color: #fff; } /* GitHub */
+.fa-microscope { color: #FF6C37; } /* Postman */
+.bxl-adobe { color: #31A8FF; } /* Photoshop */
+.bxl-adobe { color: #FF9A00; } /* Illustrator */
+
+/* Illustrator */
+
+/* End Skill Section */
+
+
+/* Education Section */
+
+#education p{
+    margin-bottom: 0px !important;
+}
+
+#education h1{
+    margin-bottom: 0px !important;
+}
+
+/* End Education Section */
+
+/* ================= End Career Section ================= */
