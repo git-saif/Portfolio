@@ -117,9 +117,9 @@
         <div class="row align-items-center py-5">
           <div class="col-md-12 col-lg-6 col-sm-12">
             <div class="hero-content py-5">
-              <h3 class="mb-2">Salamun A'laik! This is</h3>
-              <h1 class="mb-2 fw-bold">MD Saiful Islam</h1>
-              <h3 class="mb-4">
+              <h3 class="">Salamun A'laik! This is</h3>
+              <h1 class=" fw-bold">MD Saiful Islam</h1>
+              <h3 class="mb-4 pt-0">
                 I am a <span class="text"> Full Stack Web Developer</span>
               </h3>
 
@@ -159,30 +159,18 @@
 
 
 
-    <!-- ================= About Section Start ==================== -->
+    <!-- ================= career Section Start ==================== -->
     <div class="about-section">
       <div class="container-fluid" id="about-body">
         <div class="row py-5">
 
           <div class="heading pb-5">
-            <h1 class="text-center ">Meet Saif</h1>
+            <h1 class="text-center ">Career</h1>
             <div class="uderline"></div>
           </div>
 
           <div class="col-sm-12 col-md-12 col-lg-6 about-content">
-            <h1 class="">About Me</h1>
-            <!-- <h1>About Me</h1> -->
-            <p>I am <strong> Saiful Islam </strong> an Enthusiastic Full Stack Web Developer with Laravel internship experience at Smart Software Ltd. Proficient in various
-            web technologies. Completed a Diploma in Computer Engineering with a CGPA of 3.64. Earned certifications from DIPTI and
-            OSTAD, along with industrial training. I have built industry-standard projects that strengthened my skills and boosted
-            my confidence to work in the software industry.
-            </p>
-            <h1>Career Objective</h1>
-            <p>To excel as a Technologist & Full Stack Web Developer by
-            leveraging my strong programming skills and knowledge of various
-            web technologies. I am highly interested about programming skills,
-            especially in back-end Technology. My goal is to contribute
-            effectively to the technology sector and continuously enhance my    expertise</p>
+            <img src="assets/images/skills-img.png" class="img-fluid" alt="">
           </div>
 
           <div class="col-sm-12 col-md-12 col-lg-6">
@@ -294,7 +282,45 @@
                 </div>
             </div>
 
+          </div>
         </div>
+    </div>
+    </div>
+    <!-- ================= career Section End ==================== -->
+
+
+    <!-- ================= About Section Start ==================== -->
+    <div class="about-section">
+      <div class="container-fluid" id="about-body">
+        <div class="row py-5">
+
+          <div class="heading pb-5">
+            <h1 class="text-center ">Meet Saif</h1>
+            <div class="uderline"></div>
+          </div>
+
+          <!-- Left Side About Content -->
+          <div class="col-sm-12 col-md-12 col-lg-6 about-content">
+            <h1 class="">About Me</h1>
+            <!-- <h1>About Me</h1> -->
+            <p>I am <strong> Saiful Islam </strong> an Enthusiastic Full Stack Web Developer with Laravel internship experience at Smart Software Ltd. Proficient in various
+            web technologies. Completed a Diploma in Computer Engineering with a CGPA of 3.64. Earned certifications from DIPTI and
+            OSTAD, along with industrial training. I have built industry-standard projects that strengthened my skills and boosted
+            my confidence to work in the software industry.
+            </p>
+            <h1>Career Objective</h1>
+            <p>To excel as a Technologist & Full Stack Web Developer by
+            leveraging my strong programming skills and knowledge of various
+            web technologies. I am highly interested about programming skills,
+            especially in back-end Technology. My goal is to contribute
+            effectively to the technology sector and continuously enhance my    expertise</p>
+          </div>
+
+
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <img src="./assets/images/about-img.png" class="img-fluid p-5" alt="">
+
+          </div>
       </div>
     </div>
     </div>
@@ -304,49 +330,117 @@
 
     <!-- ================= Project Section Start ==================== -->
     <div class="project-section container-fluid">
-      <div class="container-fluid" id="projects-body">
-        <div class="row py-5">
-
-          <div class="heading pb-3">
+      <div class="container" id="projects-body">
+        <div class="row py-3">
+          <!-- Heading -->
+          <div class="heading pb-2">
             <h1 class="text-center ">Projects</h1>
             <div class="uderline"></div>
           </div>
-
-          <div class="row g-4 project-container">
+    
+          <!-- Projects -->
+          <div class="row g-4 justify-content-center">
             <!-- Project Box 1 -->
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="project-box text-center  shadow-sm h-100">
-                <img src="./assets/images/e-com-1.jpg" alt="Project 1" class="project-img img-fluid "
-                  style="height: 400px; object-fit: cover;">
+            <div class="col-lg-4 col-md-6">
+              <div class="project-box text-center shadow-sm h-100">
+                <img src="./assets/images/e-com-1.jpg" alt="Project 1" class="project-img img-fluid" />
                 <h3 class="project-title">POS App (Full Stack)</h3>
-                <a href="https://example.com/project1" class="view-btn" target="_blank">Details</a>
+                <button type="button" class="view-btn" data-bs-toggle="modal" data-bs-target="#modal1">
+                  Details
+                </button>
                 <a href="https://example.com/project1" class="view-btn" target="_blank">View Project</a>
               </div>
             </div>
-          
+    
+            <!-- Modal 1 -->
+            <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content text-dark">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modal1Label">POS App Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>This is a full stack POS application built with Laravel, Vue.js, and MySQL. It features product
+                      management, cart, billing, and user roles.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="https://example.com/project1" target="_blank" class="btn btn-primary">Visit Project</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
             <!-- Project Box 2 -->
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="project-box text-center  shadow-sm h-100">
-                <img src="./assets/images/e-com-2.jpg" alt="Project 2" class="project-img img-fluid"
-                  style="height: 400px; object-fit: cover;">
+            <div class="col-lg-4 col-md-6">
+              <div class="project-box text-center shadow-sm h-100">
+                <img src="./assets/images/e-com-2.jpg" alt="Project 2" class="project-img img-fluid" />
                 <h3 class="project-title">CRUD App (PHP)</h3>
-                <a href="https://example.com/project2" class="view-btn" target="_blank">Details</a>
+                <button type="button" class="view-btn" data-bs-toggle="modal" data-bs-target="#modal2">
+                  Details
+                </button>
                 <a href="https://example.com/project2" class="view-btn" target="_blank">View Project</a>
               </div>
             </div>
-          
-            <!-- Project Box 3 -->
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="project-box text-center  shadow-sm h-100">
-                <img src="./assets/images/e-com-2.jpg" alt="Project 3" class="project-img img-fluid"
-                  style="height: 400px; object-fit: cover;">
+    
+            <!-- Modal 2 -->
+            <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content text-dark">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modal2Label">CRUD App Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>This is a PHP-based CRUD application that includes Create, Read, Update, and Delete functionality
+                      with MySQL integration.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="https://example.com/project2" target="_blank" class="btn btn-primary">Visit Project</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Box 2 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="project-box text-center shadow-sm h-100">
+                <img src="./assets/images/e-com-1.jpg" alt="Project 2" class="project-img img-fluid" />
                 <h3 class="project-title">CRUD App (PHP)</h3>
-                <a href="https://example.com/project2" class="view-btn" target="_blank">Details</a>
+                <button type="button" class="view-btn" data-bs-toggle="modal" data-bs-target="#modal2">
+                  Details
+                </button>
                 <a href="https://example.com/project2" class="view-btn" target="_blank">View Project</a>
               </div>
-            </div>  </div>
+            </div>
+    
+            <!-- Modal 2 -->
+            <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content text-dark">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modal2Label">CRUD App Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>This is a PHP-based CRUD application that includes Create, Read, Update, and Delete functionality
+                      with MySQL integration.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="https://example.com/project2" target="_blank" class="btn btn-primary">Visit Project</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-      </div>
+
+
+            <!-- Add more projects similarly... -->
+          </div>
+        </div>
       </div>
     </div>
     <!-- ================= Project Section End ==================== -->
@@ -367,17 +461,18 @@
 
 
 
-    
+
     <!-- ================= Footer Section Start ==================== -->
     <div class="footer-section"></div>
     <!-- ================= Footer Section End ==================== -->
+
 
     <!-- Bootstrap Script 5.0 -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous">
+    </script>
 
     <!-- custom js -->
     <script src="assets/js/main.js"></script>
