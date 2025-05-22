@@ -10,7 +10,8 @@
 
 .nav-body{
     width: 85%;
-    /* margin: auto; */
+    /* margin: 0 !important; */
+    padding: 0 !important;
 }
 
 .navbar-nav .nav-link {
