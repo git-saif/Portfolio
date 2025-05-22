@@ -5,11 +5,17 @@
     font-family: 'Poppins', sans-serif;
 }
 .project-section {
+    
     background-color: #081b29;
     color: white;
     min-height: auto;
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+#projects-body{
+    width: 85%;
+    margin: auto;
 }
 
 .section-title {
