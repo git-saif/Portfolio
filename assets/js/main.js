@@ -1,13 +1,19 @@
 
-  document.addEventListener("DOMContentLoaded", function () {
-    var typed = new Typed(".text", {
-      strings: ["Full Stack Web Developer", "PHP Developer", "Laravel Developer"],
-      typeSpeed: 100,
-      backSpeed: 100,
-      backDelay: 1000,
-      loop: true,
-    });
+
+document.addEventListener("DOMContentLoaded", function () {
+  new Typed(".text", {
+    strings: [
+      "Full Stack Web Developer",
+      "Laravel Developer",
+      "PHP Developer"
+    ],
+    typeSpeed: 60,
+    backSpeed: 40,
+    backDelay: 1500,
+    loop: true
   });
+});
+
 
 
 function showContent(sectionId) {
