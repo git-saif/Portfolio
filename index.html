@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -46,6 +45,14 @@
         border-radius: 30px;
       }
       
+      /* Button Click Effect */
+      .btn-smooth {
+        transition: transform 0.1s ease-in-out, background-color 0.3s ease;
+      }
+      .btn-smooth:active {
+        transform: scale(0.95);
+      }
+      
       /* Typed Cursor Color */
       .typed-cursor {
         color: rgb(0, 238, 255);
@@ -53,50 +60,79 @@
 
       /* Modal Animation */
       .modal {
-        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      }
+      .modal.show {
+        opacity: 1;
+        visibility: visible;
       }
       .modal-content {
-        transform: scale(0.9);
-        transition: transform 0.3s ease-in-out;
+        transform: scale(0.8);
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
       .modal.show .modal-content {
         transform: scale(1);
+      }
+
+      /* Fade In Animation */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-in-anim {
+        animation: fadeInDown 0.5s ease-out forwards;
+      }
+
+      /* Mobile Menu Animation */
+      @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .menu-anim {
+        animation: slideDown 0.3s ease-out forwards;
       }
     </style>
   </head>
   
   <body class="text-white antialiased">
 
-    <header class="fixed top-0 left-0 w-full z-50 bg-nav-bg shadow-md">
-      <nav class="w-[90%] md:w-[85%] mx-auto flex items-center justify-between py-3">
+    <header class="fixed top-0 left-0 w-full z-50 bg-nav-bg shadow-md h-20 flex items-center">
+      <nav class="w-[90%] md:w-[85%] mx-auto flex items-center justify-between">
         
-        <a href="#" class="text-2xl font-bold text-white hover:text-cyan-main transition duration-300">SAIF-Portfolio</a>
+        <a href="#" class="text-2xl font-bold text-white hover:text-cyan-main transition duration-300 btn-smooth">SAIF-Portfolio</a>
 
-        <button id="menu-btn" class="md:hidden text-3xl text-white focus:outline-none">
+        <button id="menu-btn" class="md:hidden text-3xl text-white focus:outline-none btn-smooth">
           <i class='bx bx-menu'></i>
         </button>
 
-        <div id="nav-menu" class="hidden absolute md:static top-full left-0 w-full md:w-auto bg-nav-bg md:bg-transparent flex-col md:flex-row md:flex items-center gap-6 py-5 md:py-0 shadow-lg md:shadow-none transition-all duration-300 ease-in-out">
-          <a href="#home" class="text-lg font-medium hover:text-cyan-main transition duration-300">Home</a>
-          <a href="#career" class="text-lg font-medium hover:text-cyan-main transition duration-300">Career</a>
-          <a href="#about" class="text-lg font-medium hover:text-cyan-main transition duration-300">About</a>
-          <a href="#project" class="text-lg font-medium hover:text-cyan-main transition duration-300">Projects</a>
-          <a href="#blog" class="text-lg font-medium hover:text-cyan-main transition duration-300">Blog</a>
-          <a href="#contact" class="text-lg font-medium hover:text-cyan-main transition duration-300">Contact</a>
+        <div id="nav-menu" class="hidden absolute md:static top-20 md:top-auto left-0 w-full md:w-auto bg-nav-bg md:bg-transparent flex-col md:flex-row md:flex items-center gap-6 py-5 md:py-0 shadow-lg md:shadow-none transition-all duration-300 ease-in-out">
+          <a href="#home" class="text-lg font-medium hover:text-cyan-main transition duration-300 btn-smooth">Home</a>
+          <a href="#career" class="text-lg font-medium hover:text-cyan-main transition duration-300 btn-smooth">Career</a>
+          <a href="#about" class="text-lg font-medium hover:text-cyan-main transition duration-300 btn-smooth">About</a>
+          <a href="#project" class="text-lg font-medium hover:text-cyan-main transition duration-300 btn-smooth">Projects</a>
+          <a href="#blog" class="text-lg font-medium hover:text-cyan-main transition duration-300 btn-smooth">Blog</a>
+          <a href="#contact" class="text-lg font-medium hover:text-cyan-main transition duration-300 btn-smooth">Contact</a>
           
           <a href="https://drive.google.com/file/d/1R2wZy8LK9ZegqGa47Bdif10DrqVB7R6Y/view" target="_blank" 
-             class="px-5 py-1.5 bg-cyan-main text-black font-semibold rounded hover:bg-transparent hover:text-cyan-main border border-cyan-main transition duration-300">
+             class="px-5 py-1.5 bg-cyan-main text-black font-semibold rounded hover:bg-transparent hover:text-cyan-main border border-cyan-main transition duration-300 btn-smooth">
              Resume
           </a>
         </div>
       </nav>
     </header>
 
-    <!-- Hero Section Start -->
-    <section id="home" class="bg-hero-bg min-h-screen flex items-center pt-20 md:pt-0">
+    <section id="home" class="bg-hero-bg min-h-screen flex items-center pt-24 md:pt-0 scroll-mt-20">
       <div class="w-[90%] md:w-[85%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-10">
         
-        <div class="order-2 lg:order-1 text-center lg:text-left">
+        <div class="order-2 lg:order-1 text-center lg:text-left fade-in-anim">
           <h3 class="text-2xl md:text-4xl font-medium mb-2">Salamun A'laik! This is</h3>
           <h1 class="text-4xl md:text-6xl font-bold mb-2">MD Saiful Islam</h1>
           <h3 class="text-2xl md:text-3xl font-medium mb-6">
@@ -107,33 +143,31 @@
           </p>
 
           <div class="flex justify-center lg:justify-start gap-4 mb-8">
-            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-cyan-main text-cyan-main hover:bg-cyan-main hover:text-hero-bg hover:shadow-glow transition-all duration-500"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-cyan-main text-cyan-main hover:bg-cyan-main hover:text-hero-bg hover:shadow-glow transition-all duration-500"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-cyan-main text-cyan-main hover:bg-cyan-main hover:text-hero-bg hover:shadow-glow transition-all duration-500"><i class="fa-regular fa-envelope"></i></a>
-            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-cyan-main text-cyan-main hover:bg-cyan-main hover:text-hero-bg hover:shadow-glow transition-all duration-500"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-cyan-main text-cyan-main hover:bg-cyan-main hover:text-hero-bg hover:shadow-glow transition-all duration-500 btn-smooth"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-cyan-main text-cyan-main hover:bg-cyan-main hover:text-hero-bg hover:shadow-glow transition-all duration-500 btn-smooth"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-cyan-main text-cyan-main hover:bg-cyan-main hover:text-hero-bg hover:shadow-glow transition-all duration-500 btn-smooth"><i class="fa-regular fa-envelope"></i></a>
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-cyan-main text-cyan-main hover:bg-cyan-main hover:text-hero-bg hover:shadow-glow transition-all duration-500 btn-smooth"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="https://drive.google.com/file/d/1R2wZy8LK9ZegqGa47Bdif10DrqVB7R6Y/view" target="_blank" class="px-6 py-2 bg-cyan-main text-black font-semibold text-lg rounded hover:bg-transparent hover:text-cyan-main border border-cyan-main transition duration-300 text-center">
+            <a href="https://drive.google.com/file/d/1R2wZy8LK9ZegqGa47Bdif10DrqVB7R6Y/view" target="_blank" class="px-6 py-2 bg-cyan-main text-black font-semibold text-lg rounded hover:bg-transparent hover:text-cyan-main border border-cyan-main transition duration-300 text-center btn-smooth">
               View Resume <i class="fa-solid fa-eye ml-2"></i>
             </a>
-            <a href="https://github.com/git-saif" target="_blank" class="px-6 py-2 bg-white text-black font-semibold text-lg rounded hover:bg-transparent hover:text-white border border-white transition duration-300 text-center">
+            <a href="https://github.com/git-saif" target="_blank" class="px-6 py-2 bg-white text-black font-semibold text-lg rounded hover:bg-transparent hover:text-white border border-white transition duration-300 text-center btn-smooth">
               GitHub <i class="fa-brands fa-github ml-2"></i>
             </a>
           </div>
         </div>
 
-        <div class="order-1 lg:order-2 flex justify-center">
+        <div class="order-1 lg:order-2 flex justify-center fade-in-anim" style="animation-delay: 0.2s;">
           <div class="relative rounded-full p-2 bg-transparent shadow-[0_0_0_7px_rgb(0,238,255)]">
             <img src="assets/images/saif-git.jpg" alt="Profile" class="rounded-full w-64 h-64 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] object-cover">
           </div>
         </div>
       </div>
     </section>
-    <!-- Hero Section End -->
 
-    <!-- Career Section Start -->
-    <section id="career" class="bg-career-bg min-h-full py-16">
+    <section id="career" class="bg-career-bg min-h-full py-16 scroll-mt-20">
       <div class="w-[90%] md:w-[85%] mx-auto">
         
         <div class="text-center mb-12">
@@ -149,35 +183,35 @@
           <div class="w-full lg:w-1/2">
             <div class="flex flex-wrap justify-center gap-2 border-2 border-gray-400 p-1 mb-6 w-full md:w-fit rounded-2xl md:rounded-full mx-auto">
   
-                <button class="toggle-button active text-sm md:text-lg px-3 py-1.5 md:px-4 md:py-2 text-gray-300 font-medium transition-colors duration-300 focus:outline-none" onclick="showContent('experience', this)">
+                <button class="toggle-button active btn-smooth text-sm md:text-lg px-3 py-1.5 md:px-4 md:py-2 text-gray-300 font-medium transition-colors duration-300 focus:outline-none" onclick="showContent('experience', this)">
                     Experience
                 </button>
                 
-                <button class="toggle-button text-sm md:text-lg px-3 py-1.5 md:px-4 md:py-2 text-gray-300 font-medium transition-colors duration-300 focus:outline-none" onclick="showContent('skills', this)">
+                <button class="toggle-button btn-smooth text-sm md:text-lg px-3 py-1.5 md:px-4 md:py-2 text-gray-300 font-medium transition-colors duration-300 focus:outline-none" onclick="showContent('skills', this)">
                     Skills
                 </button>
                 
-                <button class="toggle-button text-sm md:text-lg px-3 py-1.5 md:px-4 md:py-2 text-gray-300 font-medium transition-colors duration-300 focus:outline-none" onclick="showContent('certification', this)">
+                <button class="toggle-button btn-smooth text-sm md:text-lg px-3 py-1.5 md:px-4 md:py-2 text-gray-300 font-medium transition-colors duration-300 focus:outline-none" onclick="showContent('certification', this)">
                     Certification
                 </button>
                 
-                <button class="toggle-button text-sm md:text-lg px-3 py-1.5 md:px-4 md:py-2 text-gray-300 font-medium transition-colors duration-300 focus:outline-none" onclick="showContent('education', this)">
+                <button class="toggle-button btn-smooth text-sm md:text-lg px-3 py-1.5 md:px-4 md:py-2 text-gray-300 font-medium transition-colors duration-300 focus:outline-none" onclick="showContent('education', this)">
                     Education
                 </button>
 
             </div>
 
-            <div id="experience" class="content-section block fade-in">
+            <div id="experience" class="content-section block fade-in-anim">
               <h1 class="text-2xl font-bold mb-4">Industrial Experience</h1>
               <h3 class="text-cyan-main text-xl font-semibold">Smart Software Ltd. <span class="text-gray-400 text-base">(3 Months)</span></h3>
               <h4 class="text-lg font-medium mb-2">Full Stack Web Developer</h4>
               <p class="text-gray-300 text-justify leading-relaxed">I have completed a 3-month Laravel Developer internship at Smart Software LTD, where I worked on industry-standard projects and strengthened my real-world development skills.</p>
             </div>
 
-            <div id="skills" class="content-section hidden fade-in">
+            <div id="skills" class="content-section hidden">
               <h1 class="text-2xl font-bold mb-4">Skills</h1>
               <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="bg-[#112e42] p-5 rounded-lg shadow-box">
+                <div class="bg-[#112e42] p-5 rounded-lg shadow-box hover:-translate-y-2 transition duration-300">
                   <h3 class="text-cyan-main text-lg uppercase font-semibold mb-3 border-b border-gray-600 pb-1 inline-block">Front-End</h3>
                   <ul class="space-y-2">
                     <li class="hover:text-purple-500 transition cursor-default"><i class="fa-brands fa-html5 text-[#E34F26] mr-2"></i> HTML5</li>
@@ -186,7 +220,7 @@
                     <li class="hover:text-purple-500 transition cursor-default"><i class="fa-brands fa-bootstrap text-[#7952B3] mr-2"></i> Bootstrap</li>
                   </ul>
                 </div>
-                <div class="bg-[#112e42] p-5 rounded-lg shadow-box">
+                <div class="bg-[#112e42] p-5 rounded-lg shadow-box hover:-translate-y-2 transition duration-300">
                   <h3 class="text-cyan-main text-lg uppercase font-semibold mb-3 border-b border-gray-600 pb-1 inline-block">Back-End</h3>
                   <ul class="space-y-2">
                     <li class="hover:text-purple-500 transition cursor-default"><i class="fa-brands fa-php text-[#777BB4] mr-2"></i> PHP</li>
@@ -194,7 +228,7 @@
                     <li class="hover:text-purple-500 transition cursor-default"><i class="fa-brands fa-laravel text-[#FF2D20] mr-2"></i> Laravel</li>
                   </ul>
                 </div>
-                <div class="bg-[#112e42] p-5 rounded-lg shadow-box">
+                <div class="bg-[#112e42] p-5 rounded-lg shadow-box hover:-translate-y-2 transition duration-300">
                   <h3 class="text-cyan-main text-lg uppercase font-semibold mb-3 border-b border-gray-600 pb-1 inline-block">Tools</h3>
                   <ul class="space-y-2">
                     <li class="hover:text-purple-500 transition cursor-default"><i class='bx bxl-visual-studio text-[#007ACC] mr-2'></i> VS Code</li>
@@ -205,43 +239,43 @@
               </div>
             </div>
 
-            <div id="certification" class="content-section hidden fade-in space-y-6">
+            <div id="certification" class="content-section hidden space-y-6">
               <h1 class="text-2xl font-bold mb-2">Certification</h1>
               
-              <div>
+              <div class="hover:pl-2 transition-all duration-300 border-l-2 border-transparent hover:border-cyan-main pl-0">
                 <h3 class="text-cyan-main text-xl font-semibold">Web Application Development <span class="text-gray-400 text-base">(3 Months Industrial Training)</span></h3>
                 <h4 class="text-gray-300">Daffodil International Professional Training Institute</h4>
               </div>
               
-              <div>
+              <div class="hover:pl-2 transition-all duration-300 border-l-2 border-transparent hover:border-cyan-main pl-0">
                 <h3 class="text-cyan-main text-xl font-semibold">Web Development with PHP & Laravel <span class="text-gray-400 text-base">(6 Months)</span></h3>
                 <h4 class="text-gray-300">OSTAD Limited</h4>
               </div>
 
-              <div>
+              <div class="hover:pl-2 transition-all duration-300 border-l-2 border-transparent hover:border-cyan-main pl-0">
                 <h3 class="text-cyan-main text-xl font-semibold">Diploma in Web & E-Commerce <span class="text-gray-400 text-base">(1 Year)</span></h3>
                 <h4 class="text-gray-300">Daffodil International Professional Training Institute</h4>
               </div>
             </div>
 
-            <div id="education" class="content-section hidden fade-in space-y-6">
+            <div id="education" class="content-section hidden space-y-6">
               <h1 class="text-2xl font-bold mb-2">Education</h1>
               
-              <div>
+              <div class="hover:bg-[#112e42] p-4 rounded-lg transition duration-300">
                 <p class="text-gray-400 text-sm">2024</p>
                 <h3 class="text-cyan-main text-xl font-semibold">Takmil (Master's)</h3>
                 <p class="text-gray-300">An-Noor Islamia Madrasah</p>
                 <p class="text-gray-300">Result: Jayyid Jiddan</p>
               </div>
 
-              <div>
+              <div class="hover:bg-[#112e42] p-4 rounded-lg transition duration-300">
                 <p class="text-gray-400 text-sm">2019 - 2024 (4 Years)</p>
                 <p class="text-gray-300">Institute of Science and Technology (IST)</p>
                 <h3 class="text-cyan-main text-xl font-semibold">Diploma in Computer Engineering</h3>
                 <p class="text-gray-300">CGPA: 3.64 / 4.00</p>
               </div>
 
-              <div>
+              <div class="hover:bg-[#112e42] p-4 rounded-lg transition duration-300">
                 <p class="text-gray-400 text-sm">2019</p>
                 <p class="text-gray-300">Gadairchar Achia Islamia Alim Madrasah</p>
                 <h3 class="text-cyan-main text-xl font-semibold">Dakhil (Secondary School Certificate)</h3>
@@ -253,10 +287,8 @@
         </div>
       </div>
     </section>
-    <!-- Career Section End -->
 
-    <!-- About Section Start -->
-    <section id="about" class="bg-hero-bg py-16">
+    <section id="about" class="bg-hero-bg py-16 scroll-mt-20">
       <div class="w-[90%] md:w-[85%] h-full mx-auto">
         
         <div class="text-center mb-12">
@@ -277,211 +309,168 @@
             </p>
           </div>
 
-          <div class="w-2/3 mx-auto md:w-1/2 lg:w-2/3 order-1 lg:order-2 flex justify-center">
+          <div class="w-2/3 mx-auto md:w-1/2 lg:w-2/3 order-1 lg:order-2 flex justify-center hover:scale-105 transition duration-500">
             <img src="./assets/images/about-img.png" class="max-w-full h-auto md:p-10" alt="About Saif">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Project Section Start -->
-    <section id="project" class="bg-career-bg py-16">
+    <section id="project" class="bg-career-bg py-16 scroll-mt-20">
       <div class="w-[90%] md:w-[85%] mx-auto">
         <div class="text-center mb-12">
           <h1 class="text-4xl md:text-5xl font-bold mb-2">Projects</h1>
           <div class="h-1 w-48 bg-gradient-to-r from-cyan-main to-gray-500 mx-auto rounded"></div>
         </div>
 
-        <!-- Project Grid Start -->
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-8">
   
             <div class="bg-[#0c2a3e] border border-gray-700 rounded-xl p-2 md:p-4 transition hover:-translate-y-2 duration-300 shadow-lg group">
-                <img src="./assets/images/e-com-1.jpg" alt="Project 1" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4">
+                <img src="./assets/images/e-com-1.jpg" alt="Project 1" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4 group-hover:scale-105 transition duration-300">
                 
                 <h3 class="text-xs md:text-xl font-bold mb-2 md:mb-4 text-center truncate">POS App (Full Stack)</h3>
                 
                 <div class="flex flex-col xl:flex-row justify-center gap-2 mb-2">
-                <button onclick="toggleModal('modal1')" class="px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
+                <button onclick="toggleModal('modal1')" class="btn-smooth px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
                     Details
                 </button>
-                <a href="#" class="px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
+                <a href="#" class="btn-smooth px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
                     View Project
                 </a>
                 </div>
             </div>
 
             <div class="bg-[#0c2a3e] border border-gray-700 rounded-xl p-2 md:p-4 transition hover:-translate-y-2 duration-300 shadow-lg group">
-                <img src="./assets/images/e-com-2.jpg" alt="Project 2" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4">
+                <img src="./assets/images/e-com-2.jpg" alt="Project 2" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4 group-hover:scale-105 transition duration-300">
                 <h3 class="text-xs md:text-xl font-bold mb-2 md:mb-4 text-center truncate">CRUD App (PHP)</h3>
                 <div class="flex flex-col xl:flex-row justify-center gap-2 mb-2">
-                <button onclick="toggleModal('modal2')" class="px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
+                <button onclick="toggleModal('modal2')" class="btn-smooth px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
                     Details
                 </button>
-                <a href="#" class="px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
+                <a href="#" class="btn-smooth px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
                     View Project
                 </a>
                 </div>
             </div>
 
             <div class="bg-[#0c2a3e] border border-gray-700 rounded-xl p-2 md:p-4 transition hover:-translate-y-2 duration-300 shadow-lg group">
-                <img src="./assets/images/e-com-1.jpg" alt="Project 3" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4">
+                <img src="./assets/images/e-com-1.jpg" alt="Project 3" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4 group-hover:scale-105 transition duration-300">
                 <h3 class="text-xs md:text-xl font-bold mb-2 md:mb-4 text-center truncate">E-Commerce (Laravel)</h3>
                 <div class="flex flex-col xl:flex-row justify-center gap-2 mb-2">
-                <button onclick="toggleModal('modal1')" class="px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
+                <button onclick="toggleModal('modal1')" class="btn-smooth px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
                     Details
                 </button>
-                <a href="#" class="px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
+                <a href="#" class="btn-smooth px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
                     View Project
                 </a>
                 </div>
             </div>
 
             <div class="bg-[#0c2a3e] border border-gray-700 rounded-xl p-2 md:p-4 transition hover:-translate-y-2 duration-300 shadow-lg group">
-                <img src="./assets/images/e-com-2.jpg" alt="Project 4" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4">
+                <img src="./assets/images/e-com-2.jpg" alt="Project 4" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4 group-hover:scale-105 transition duration-300">
                 <h3 class="text-xs md:text-xl font-bold mb-2 md:mb-4 text-center truncate">Portfolio V1</h3>
                 <div class="flex flex-col xl:flex-row justify-center gap-2 mb-2">
-                <button onclick="toggleModal('modal1')" class="px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
+                <button onclick="toggleModal('modal1')" class="btn-smooth px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
                     Details
                 </button>
-                <a href="#" class="px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
+                <a href="#" class="btn-smooth px-2 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300 text-center">
                     View Project
                 </a>
                 </div>
             </div>
 
         </div>
-        <!-- Project Grid End -->
-
-        <!-- <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          
-          <div class="bg-[#0c2a3e] border border-gray-700 rounded-xl p-4 transition hover:-translate-y-2 duration-300 shadow-lg group">
-            <img src="./assets/images/e-com-1.jpg" alt="Project 1" class="w-full h-64 object-cover rounded-md mb-4">
-            <h3 class="text-xs md:text-md lg:text-xl font-bold mb-4 text-center">POS App (Full Stack)</h3>
-            <div class="flex justify-center gap-4 mb-2">
-              <button onclick="toggleModal('modal1')" class="px-5 py-2 bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300">Details</button>
-              <a href="#" class="px-5 py-2 bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300">View Project</a>
-            </div>
-          </div>
-
-          <div class="bg-[#0c2a3e] border border-gray-700 rounded-xl p-4 transition hover:-translate-y-2 duration-300 shadow-lg group">
-            <img src="./assets/images/e-com-2.jpg" alt="Project 2" class="w-full h-64 object-cover rounded-md mb-4">
-            <h3 class="text-xl font-bold mb-4 text-center">CRUD App (PHP)</h3>
-            <div class="flex justify-center gap-4 mb-2">
-              <button onclick="toggleModal('modal2')" class="px-5 py-2 bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300">Details</button>
-              <a href="#" class="px-5 py-2 bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300">View Project</a>
-            </div>
-          </div>
-
-          <div class="bg-[#0c2a3e] border border-gray-700 rounded-xl p-4 transition hover:-translate-y-2 duration-300 shadow-lg group">
-            <img src="./assets/images/e-com-1.jpg" alt="Project 3" class="w-full h-64 object-cover rounded-md mb-4">
-            <h3 class="text-xl font-bold mb-4 text-center">E-Commerce (Laravel)</h3>
-            <div class="flex justify-center gap-4 mb-2">
-              <button onclick="toggleModal('modal1')" class="px-5 py-2 bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300">Details</button>
-              <a href="#" class="px-5 py-2 bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300">View Project</a>
-            </div>
-          </div>
-
-        </div> -->
-      </div>
+        </div>
     </section>
-    <!-- Project Section End -->
 
-    <!-- Project Modal Start -->
-    <div id="modal1" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black bg-opacity-70 modal">
+    <div id="modal1" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black bg-opacity-70 modal backdrop-blur-sm">
       <div class="bg-white text-gray-800 rounded-lg shadow-xl w-[90%] md:w-[500px] modal-content p-6 relative">
         <div class="flex justify-between items-center border-b pb-3 mb-4">
           <h5 class="text-xl font-bold">POS App Details</h5>
-          <button onclick="toggleModal('modal1')" class="text-2xl font-bold text-gray-500 hover:text-red-500">&times;</button>
+          <button onclick="toggleModal('modal1')" class="text-2xl font-bold text-gray-500 hover:text-red-500 btn-smooth">&times;</button>
         </div>
         <div class="mb-4 text-gray-600">
           <p>This is a full stack POS application built with Laravel, Vue.js, and MySQL. It features product management, cart, billing, and user roles.</p>
         </div>
         <div class="flex justify-end gap-2 border-t pt-3">
-          <button onclick="toggleModal('modal1')" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">Close</button>
-          <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Visit Project</a>
+          <button onclick="toggleModal('modal1')" class="btn-smooth px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">Close</button>
+          <a href="#" class="btn-smooth px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Visit Project</a>
         </div>
       </div>
     </div>
 
-    <div id="modal2" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black bg-opacity-70 modal">
+    <div id="modal2" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black bg-opacity-70 modal backdrop-blur-sm">
       <div class="bg-white text-gray-800 rounded-lg shadow-xl w-[90%] md:w-[500px] modal-content p-6 relative">
         <div class="flex justify-between items-center border-b pb-3 mb-4">
           <h5 class="text-xl font-bold">CRUD App Details</h5>
-          <button onclick="toggleModal('modal2')" class="text-2xl font-bold text-gray-500 hover:text-red-500">&times;</button>
+          <button onclick="toggleModal('modal2')" class="text-2xl font-bold text-gray-500 hover:text-red-500 btn-smooth">&times;</button>
         </div>
         <div class="mb-4 text-gray-600">
           <p>This is a PHP-based CRUD application that includes Create, Read, Update, and Delete functionality with MySQL integration.</p>
         </div>
         <div class="flex justify-end gap-2 border-t pt-3">
-          <button onclick="toggleModal('modal2')" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">Close</button>
-          <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Visit Project</a>
+          <button onclick="toggleModal('modal2')" class="btn-smooth px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">Close</button>
+          <a href="#" class="btn-smooth px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Visit Project</a>
         </div>
       </div>
     </div>
-    <!-- Project Modal End -->
 
-    <!-- Blog Section Start -->
-    <section id="blog" class="bg-hero-bg py-16">
+    <section id="blog" class="bg-hero-bg py-16 scroll-mt-20">
       <div class="w-[90%] md:w-[85%] mx-auto">
         <div class="text-center mb-12">
           <h1 class="text-4xl md:text-5xl font-bold mb-2">My Blogs</h1>
           <div class="h-1 w-48 bg-gradient-to-r from-cyan-main to-gray-500 mx-auto rounded"></div>
         </div>
 
-        <!-- Blog Cards Start -->
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-8">
   
             <div class="bg-[#0c2a3e] border border-gray-700 rounded-xl p-2 md:p-4 transition hover:-translate-y-2 duration-300 shadow-lg group">
-                <img src="./assets/images/e-com-1.jpg" alt="Blog 1" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4">
+                <img src="./assets/images/e-com-1.jpg" alt="Blog 1" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4 group-hover:scale-105 transition duration-300">
                 
                 <h3 class="text-xs md:text-xl font-bold mb-2 md:mb-4 text-center truncate">Tech Trends 2026</h3>
                 
                 <div class="flex justify-center gap-4 mb-2">
-                <button class="px-3 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300">
+                <button class="btn-smooth px-3 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300">
                     Read More
                 </button>
                 </div>
             </div>
 
             <div class="bg-[#0c2a3e] border border-gray-700 rounded-xl p-2 md:p-4 transition hover:-translate-y-2 duration-300 shadow-lg group">
-                <img src="./assets/images/e-com-2.jpg" alt="Blog 2" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4">
+                <img src="./assets/images/e-com-2.jpg" alt="Blog 2" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4 group-hover:scale-105 transition duration-300">
                 <h3 class="text-xs md:text-xl font-bold mb-2 md:mb-4 text-center truncate">Laravel Best Practices</h3>
                 <div class="flex justify-center gap-4 mb-2">
-                <button class="px-3 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300">
+                <button class="btn-smooth px-3 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300">
                     Read More
                 </button>
                 </div>
             </div>
 
             <div class="bg-[#0c2a3e] border border-gray-700 rounded-xl p-2 md:p-4 transition hover:-translate-y-2 duration-300 shadow-lg group">
-                <img src="./assets/images/e-com-1.jpg" alt="Blog 3" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4">
+                <img src="./assets/images/e-com-1.jpg" alt="Blog 3" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4 group-hover:scale-105 transition duration-300">
                 <h3 class="text-xs md:text-xl font-bold mb-2 md:mb-4 text-center truncate">Understanding MySQL</h3>
                 <div class="flex justify-center gap-4 mb-2">
-                <button class="px-3 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300">
+                <button class="btn-smooth px-3 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300">
                     Read More
                 </button>
                 </div>
             </div>
 
             <div class="bg-[#0c2a3e] border border-gray-700 rounded-xl p-2 md:p-4 transition hover:-translate-y-2 duration-300 shadow-lg group">
-                <img src="./assets/images/e-com-2.jpg" alt="Blog 4" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4">
+                <img src="./assets/images/e-com-2.jpg" alt="Blog 4" class="w-full aspect-video object-cover rounded-md mb-2 md:mb-4 group-hover:scale-105 transition duration-300">
                 <h3 class="text-xs md:text-xl font-bold mb-2 md:mb-4 text-center truncate">Web Security Tips</h3>
                 <div class="flex justify-center gap-4 mb-2">
-                <button class="px-3 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300">
+                <button class="btn-smooth px-3 py-1 md:px-5 md:py-2 text-[10px] md:text-base bg-gradient-to-r from-cyan-main to-blue-600 text-white rounded hover:from-blue-600 hover:to-cyan-main hover:text-black transition duration-300">
                     Read More
                 </button>
                 </div>
             </div>
 
         </div>
-        <!-- Blog Cards End -->
-
-      </div>
+        </div>
     </section>
-    <!-- Blog Section End -->
 
-    <!-- Contact Section Start -->
-    <section id="contact" class="bg-career-bg py-16">
+    <section id="contact" class="bg-career-bg py-16 scroll-mt-20">
       <div class="w-[90%] md:w-[85%] mx-auto">
         <div class="text-center mb-12">
           <h1 class="text-4xl md:text-5xl font-bold mb-2">Contact Me</h1>
@@ -529,24 +518,20 @@
                 <textarea id="message" name="message" placeholder="Message" required rows="4"
                   class="w-full p-3 bg-white border border-gray-600 rounded text-white focus:outline-none focus:border-cyan-main transition resize-none"></textarea>
               </div>
-              <button type="submit" class="w-full py-3 bg-gradient-to-r from-cyan-main to-[#4c85f7] text-white font-bold rounded hover:from-[#4c85f7] hover:to-cyan-main transition duration-300">Submit</button>
+              <button type="submit" class="w-full py-3 bg-gradient-to-r from-cyan-main to-[#4c85f7] text-white font-bold rounded hover:from-[#4c85f7] hover:to-cyan-main transition duration-300 btn-smooth">Submit</button>
             </form>
           </div>
 
         </div>
       </div>
     </section>
-    <!-- Contact Section End -->
 
-    <!-- Footer Section Start -->
     <footer class="bg-footer-bg text-[#d5e6e6] py-4 text-center">
       <div class="container mx-auto">
         <p class="text-lg md:text-xl">Copyright &copy; 2023 | All Rights Reserved</p>
       </div>
     </footer>
-    <!-- Footer Section End -->
-
-
+    
     <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.5/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
@@ -568,11 +553,11 @@
 
       // ================= Career Tabs Logic =================
       function showContent(sectionId, btn) {
-        // Hide all content sections (using Tailwind 'hidden')
+        // Hide all content sections
         const allSections = document.querySelectorAll(".content-section");
         allSections.forEach((section) => {
             section.classList.add("hidden");
-            section.classList.remove("block");
+            section.classList.remove("block", "fade-in-anim"); 
         });
 
         // Remove active styling from all buttons
@@ -583,28 +568,61 @@
         const selectedSection = document.getElementById(sectionId);
         selectedSection.classList.remove("hidden");
         selectedSection.classList.add("block");
+        
+        // Trigger reflow to restart animation
+        void selectedSection.offsetWidth; 
+        
+        selectedSection.classList.add("fade-in-anim");
 
         // Add active styling to clicked button
         btn.classList.add("active");
       }
 
-      // ================= Mobile Menu Logic =================
+      // ================= Mobile Menu & Icon Toggle Logic =================
       const menuBtn = document.getElementById('menu-btn');
       const navMenu = document.getElementById('nav-menu');
+      const menuIcon = menuBtn.querySelector('i');
 
-      menuBtn.addEventListener('click', () => {
+      function toggleMenu() {
         navMenu.classList.toggle('hidden');
         navMenu.classList.toggle('flex');
+        
+        // Add animation class when opening
+        if(!navMenu.classList.contains('hidden')){
+            navMenu.classList.add('menu-anim');
+        } else {
+            navMenu.classList.remove('menu-anim');
+        }
+
+        // Icon Logic
+        if (navMenu.classList.contains('hidden')) {
+            menuIcon.classList.remove('bx-x');
+            menuIcon.classList.add('bx-menu');
+        } else {
+            menuIcon.classList.remove('bx-menu');
+            menuIcon.classList.add('bx-x');
+        }
+      }
+
+      menuBtn.addEventListener('click', toggleMenu);
+
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (!navMenu.classList.contains('hidden')) {
+                toggleMenu();
+            }
+        });
       });
 
-      // ================= Modal Logic (Custom Tailwind) =================
+      // ================= Modal Logic =================
       function toggleModal(modalId) {
         const modal = document.getElementById(modalId);
         if (modal.classList.contains('hidden')) {
           // Open Modal
           modal.classList.remove('hidden');
           modal.classList.add('flex');
-          // Add small delay for transition
+          // Small delay to allow CSS transition to catch the change
           setTimeout(() => modal.classList.add('show'), 10);
         } else {
           // Close Modal
@@ -612,7 +630,7 @@
           setTimeout(() => {
             modal.classList.add('hidden');
             modal.classList.remove('flex');
-          }, 300); // Matches CSS transition duration
+          }, 300); // Wait for transition to finish
         }
       }
     </script>
